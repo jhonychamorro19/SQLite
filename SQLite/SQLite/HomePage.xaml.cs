@@ -16,6 +16,9 @@ namespace SQLite
         {
             InitializeComponent();
 
+            listaListView.ItemTemplate = new DataTemplate(typeof(EmpleadoCell));
+            listaListView.RowHeight = 70;
+
             using (var datos = new DataAccess())
             {                
                 listaListView.ItemsSource = datos.GetEmpleados();
